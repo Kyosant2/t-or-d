@@ -6,9 +6,9 @@ input.onButtonPressed(Button.A, function () {
         basic.showString("Dare")
     }
 })
-input.onButtonPressed(Button.AB, function () {
+input.onButtonPressed(Button.B, function () {
     arrow = randint(0, 3)
-    if (TruthORDare == 0) {
+    if (arrow == 0) {
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -16,7 +16,9 @@ input.onButtonPressed(Button.AB, function () {
             . . # . .
             . . # . .
             `)
-    } else if (TruthORDare == 1) {
+        basic.pause(100)
+        basic.clearScreen()
+    } else if (arrow == 1) {
         basic.showLeds(`
             . . # . .
             . . . # .
@@ -24,7 +26,9 @@ input.onButtonPressed(Button.AB, function () {
             . . . # .
             . . # . .
             `)
-    } else if (TruthORDare == 2) {
+        basic.pause(100)
+        basic.clearScreen()
+    } else if (arrow == 2) {
         basic.showLeds(`
             . . # . .
             . . # . .
@@ -32,16 +36,21 @@ input.onButtonPressed(Button.AB, function () {
             . # # # .
             . . # . .
             `)
+        basic.pause(100)
+        basic.clearScreen()
     } else {
         basic.showLeds(`
             . . # . .
             . # . . .
             # # # # #
             . # . . .
-            . . . . .
+            . . # . .
             `)
+        basic.pause(100)
+        basic.clearScreen()
     }
 })
 let arrow = 0
 let TruthORDare = 0
-basic.showString("WELCOME TO TRUTH OR DARE... ")
+basic.showString(" TRUTH OR DARE... ")
+music.playTone(131, music.beat(BeatFraction.Whole))
